@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>DNS</title>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/angular-aria.min.js"></script>
+    <script src="./lib/angular-animate.min.js"></script>
+    <script src="./lib/angular-material.min.js"></script>
+    
+    <script src="./lib/script.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./lib/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="./lib/styles.css">
+</head>
+
+<body ng-controller="all">
+    <md-toolbar class="md-hue-1">
+        <div layout="row">
+          <md-toolbar-filler>
+            <md-icon id="filler-icon">dashboard</md-icon>
+          </md-toolbar-filler>
+          <h2 class="md-toolbar-tools">
+            <span>DNS Provider - Admin Panel</span>
+          </h2>
+        </div>
+      </md-toolbar>
+
+
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Check Domain</span>
+            <span class="md-subhead">Check Domain Status in Database</span>
+          </md-card-title-text>
+        </md-card-title>
+    
+        <md-card-content>
+          <div layout="row">
+            <md-input-container>
+              <label>Domain</label>
+              <input ng-model="checkDomain">
+            </md-input-container>
+    
+          </div>
+          <md-button class="md-raised md-primary" ng-click="checkStatus(checkDomain)">check status</md-button> {{ status.status }}
+
+        </md-card-content>
+
+      </md-card>
+
+
+      
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Add Domain</span>
+            <span class="md-subhead">Add Domain to Blocklist</span>
+          </md-card-title-text>
+        </md-card-title>
+    
+        <md-card-content>
+          <div layout="row">
+            <md-input-container>
+              <label>Domain</label>
+              <input ng-model="add">
+            </md-input-container>
+    
+          </div>
+          <md-button class="md-raised md-primary" ng-click="addDomain(add)">add to blocklist</md-button> {{ status2.status }}
+
+        </md-card-content>
+        
+      </md-card>
+
+
+      
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Remove Domain</span>
+            <span class="md-subhead">Remove Domain from Blocklist</span>
+          </md-card-title-text>
+        </md-card-title>
+    
+        <md-card-content>
+          <div layout="row">
+            <md-input-container>
+              <label>Domain</label>
+              <input ng-model="remove">
+            </md-input-container>
+    
+          </div>
+          <md-button class="md-raised md-primary" ng-click="removeDomain(remove)">remove from blocklist</md-button> {{ status3.status }}
+
+        </md-card-content>
+        
+      </md-card>
+
+    <script>
+        function msieversion() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                document.body.innerHTML = "<h1>Your Browser is too old!</h1><h2>Please use Chrome or Firefox</h2>";
+            }
+
+            return false;
+        }
+
+        msieversion();
+    </script>
+
+</body>
+
+</html>

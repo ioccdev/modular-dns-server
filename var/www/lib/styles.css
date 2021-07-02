@@ -1,0 +1,4 @@
+md-toolbar md-toolbar-filler {
+    display: flex; }
+    md-toolbar md-toolbar-filler #filler-icon {
+      fill: #4C9EF1; }
